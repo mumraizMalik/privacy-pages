@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account & Data Deletion – Finance App</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      min-height: 100vh;
+    }
+    header {
+      background: #b91c1c;
+      color: white;
+      padding: 40px 24px 32px;
+    }
+    header .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      transition: color 0.15s;
+    }
+    header .back:hover { color: white; }
+    header h1 { font-size: 1.8rem; margin-bottom: 6px; }
+    header p { opacity: 0.8; font-size: 0.95rem; }
+    main {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 0 24px 60px;
+    }
+    .alert {
+      background: #fff1f2;
+      border-left: 4px solid #b91c1c;
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin-bottom: 32px;
+      color: #991b1b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .info {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin-bottom: 32px;
+      color: #1e40af;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    h2 {
+      font-size: 1.1rem;
+      color: #991b1b;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #fecaca;
+    }
+    h2.blue {
+      color: #1e40af;
+      border-bottom-color: #bfdbfe;
+    }
+    h3 {
+      font-size: 0.95rem;
+      color: #334155;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    p { font-size: 0.97rem; color: #475569; line-height: 1.75; margin-bottom: 10px; }
+    ul { padding-left: 20px; margin-bottom: 10px; }
+    ul li { font-size: 0.97rem; color: #475569; line-height: 1.75; margin-bottom: 4px; }
+    a { color: #2563eb; }
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 10px;
+      counter-reset: step-counter;
+    }
+    .steps li {
+      counter-increment: step-counter;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 0.97rem;
+      color: #475569;
+      line-height: 1.65;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: counter(step-counter);
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: #b91c1c;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .steps.blue li::before { background: #2563eb; }
+    .table-wrap { overflow-x: auto; margin: 12px 0 10px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+    th {
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 700;
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid #e2e8f0;
+    }
+    td {
+      padding: 10px 14px;
+      border: 1px solid #e2e8f0;
+      color: #475569;
+      vertical-align: top;
+    }
+    td.deleted { color: #b91c1c; font-weight: 600; }
+    td.kept { color: #15803d; font-weight: 600; }
+    .email-btn {
+      display: inline-block;
+      margin-top: 8px;
+      background: #2563eb;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .email-btn:hover { background: #1d4ed8; }
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      border-top: 1px solid #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="back" href="./">← Privacy Policy</a>
+    <h1>Finance App</h1>
+    <p>Account &amp; Data Deletion &nbsp;·&nbsp; Mumraiz Malik</p>
+  </header>
+
+  <main>
+
+    <div class="alert">
+      <strong>Important:</strong> Deleting your account permanently removes all your cloud backup data from our servers. This action cannot be undone. Your local data stored on your device is not affected.
+    </div>
+
+    <!-- ── Method 1: In-App ── -->
+    <h2>Option 1 — Delete Account Directly in the App</h2>
+    <p>
+      The fastest way to delete your account and all associated cloud data is from within <strong>Finance App</strong> itself. This requires you to be signed in with your Google account.
+    </p>
+
+    <ol class="steps">
+      <li>Open <strong>Finance App</strong> on your device.</li>
+      <li>Tap the <strong>Backup &amp; Sync</strong> tab at the bottom of the screen.</li>
+      <li>If you are not already signed in, tap <strong>Sign in with Google</strong> and authenticate.</li>
+      <li>Under the <strong>Account</strong> section, tap <strong>Delete Account</strong> (shown in red below the Sign Out button).</li>
+      <li>A confirmation dialog will appear explaining what data will be deleted. Tap <strong>Yes, Delete My Account</strong> to confirm.</li>
+      <li>Your account and all cloud backups are immediately and permanently deleted.</li>
+    </ol>
+
+    <!-- ── Method 2: Email request ── -->
+    <h2>Option 2 — Submit a Deletion Request by Email</h2>
+    <p>
+      If you cannot access the app or prefer to request deletion manually, email us at the address below. We will process your request within <strong>30 days</strong>.
+    </p>
+
+    <ol class="steps">
+      <li>Send an email to <a href="mailto:reach.mumraiz@gmail.com">reach.mumraiz@gmail.com</a> with the subject line: <strong>"Finance App – Delete My Account"</strong>.</li>
+      <li>In the body, include the Google email address linked to your Finance App account so we can identify your data.</li>
+      <li>We will confirm receipt within 3 business days and complete deletion within 30 days.</li>
+      <li>You will receive a confirmation email once deletion is complete.</li>
+    </ol>
+
+    <p>
+      <a class="email-btn" href="mailto:reach.mumraiz@gmail.com?subject=Finance%20App%20%E2%80%93%20Delete%20My%20Account&body=Please%20delete%20my%20Finance%20App%20account.%0A%0AGoogle%20email%20linked%20to%20my%20account%3A%20">Email Us to Delete Account</a>
+    </p>
+
+    <!-- ── What gets deleted ── -->
+    <h2>What Data Is Deleted vs. Kept</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Location</th>
+            <th>On Account Deletion</th>
+            <th>Retention Period</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>All cloud backup snapshots (financial data)</td>
+            <td>Google Firebase Firestore</td>
+            <td class="deleted">Permanently deleted</td>
+            <td>Immediately upon deletion</td>
+          </tr>
+          <tr>
+            <td>Firebase user document</td>
+            <td>Google Firebase Firestore</td>
+            <td class="deleted">Permanently deleted</td>
+            <td>Immediately upon deletion</td>
+          </tr>
+          <tr>
+            <td>Firebase Authentication account (UID, email, display name)</td>
+            <td>Google Firebase Auth</td>
+            <td class="deleted">Permanently deleted</td>
+            <td>Immediately upon deletion</td>
+          </tr>
+          <tr>
+            <td>Local financial data (transactions, history, recurring items)</td>
+            <td>On-device only (MMKV storage)</td>
+            <td class="kept">Kept on device</td>
+            <td>Until app is uninstalled</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Local data on your device is never transmitted to our servers unless you explicitly use the cloud backup feature. Deleting your account does not erase local device data — to remove that, simply uninstall the app.
+    </p>
+
+    <!-- ── Data-only deletion (no account delete) ── -->
+    <h2 class="blue">Request Data Deletion Without Deleting Your Account</h2>
+    <div class="info">
+      You can delete your cloud backup data without deleting your account. This lets you keep using Finance App with cloud backup while removing all previously stored snapshots.
+    </div>
+
+    <h3>Option A — Delete individual snapshots in the app</h3>
+    <ol class="steps blue">
+      <li>Open <strong>Finance App</strong> and go to <strong>Backup &amp; Sync</strong>.</li>
+      <li>Sign in with Google if prompted.</li>
+      <li>Under <strong>Restore History</strong>, tap any snapshot you want to remove. (Currently individual snapshot deletion is managed automatically — the app keeps only the last 10 snapshots and removes older ones automatically.)</li>
+    </ol>
+
+    <h3>Option B — Request cloud data wipe by email</h3>
+    <p>
+      Email us at <a href="mailto:reach.mumraiz@gmail.com">reach.mumraiz@gmail.com</a> with the subject <strong>"Finance App – Delete My Data Only"</strong>. Include your linked Google email address. We will delete all Firestore snapshots associated with your account while keeping your Firebase Auth account active so you can continue using the app.
+    </p>
+
+    <h2>Contact</h2>
+    <p>For any questions about data deletion, contact:</p>
+    <p><strong>Mumraiz Malik</strong><br/>
+    <strong>Email:</strong> <a href="mailto:reach.mumraiz@gmail.com">reach.mumraiz@gmail.com</a></p>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Mumraiz Malik &nbsp;·&nbsp;
+    <a href="./">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="../">All Apps</a>
+  </footer>
+
+</body>
+</html>
