@@ -83,9 +83,10 @@
 
   <main>
     <div class="highlight">
-      <strong>Short version:</strong> Your financial data stays on your device by default.
-      Cloud backup is optional and requires your explicit action. We do not sell or share
-      your data with any third parties.
+      <strong>Short version:</strong> When you install the app, an anonymous Firebase account
+      is automatically created to enable cloud backup. Your financial data is only uploaded
+      to the cloud when you use the backup feature. We do not sell or share your data with
+      any third parties.
     </div>
 
     <p>
@@ -105,16 +106,27 @@
     </ul>
     <p>This data never leaves your device unless you choose to enable cloud backup.</p>
 
-    <h3>b) Data sent to the cloud (optional backup feature)</h3>
-    <p>If you use the <strong>Cloud Backup</strong> feature, the following is stored securely in Google Firebase Firestore:</p>
+    <h3>b) Anonymous Firebase Account (automatic on first launch)</h3>
+    <p>
+      When you first open the app, we automatically create an <strong>anonymous Firebase account</strong>
+      for you using Firebase Authentication. This happens in the background without any action from you.
+      This account:
+    </p>
+    <ul>
+      <li>Contains no personal information — it is just a unique ID (Firebase UID)</li>
+      <li>Is used to securely associate your cloud backups with your device</li>
+      <li>Is never shared with third parties</li>
+    </ul>
+
+    <h3>c) Data sent to the cloud (backup feature)</h3>
+    <p>When you use the <strong>Cloud Backup</strong> feature, the following is stored securely in Google Firebase Firestore under your anonymous account:</p>
     <ul>
       <li>Your complete financial data snapshot (transactions, recurring items, history)</li>
       <li>Backup timestamp and label</li>
-      <li>A unique anonymous user ID (Firebase UID) — auto-assigned, contains no personal information</li>
     </ul>
     <p>A maximum of 10 snapshots are kept; older ones are automatically deleted.</p>
 
-    <h3>c) Google Account (optional)</h3>
+    <h3>d) Google Account (optional)</h3>
     <p>You may optionally link your Google account to your cloud backup. If you do, we also store:</p>
     <ul>
       <li>Your Google email address</li>
